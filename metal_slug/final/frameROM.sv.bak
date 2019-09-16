@@ -1,0 +1,15 @@
+module frameROM(
+	input[8:0] addr,
+	input Clk,
+	output logic[23:0] data_ouy
+)
+
+logic [4:0] mem[400];
+
+initial
+begin
+		$readmemh("",mem);
+end
+
+
+endmodule
