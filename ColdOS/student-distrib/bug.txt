@@ -1,0 +1,34 @@
+WHO:  zq2
+WHAT: The screen diplay magic number: 0x00400BFC after booting
+WHEN: 10/20/18
+HOW:  Forgot to pushl and popl registers in boot.S
+
+WHO:  qw2
+WHAT: Constantly rebooting after sti();
+WHEN: 10/21/18
+HOW:  Resolved after initializing PIC (i8259.c)
+
+WHO:  zq2
+WHAT: Constantly rebooting after throwing exceptions
+WHEN: 10/21/18
+HOW:  Forgot to load interrupt descriptor table after initialization
+
+WHO: rzli2
+WHAT: terminal write does not start from the start of one line
+WHEN: 10/28/18
+HOW: Forgot to reset screen_x back to 0
+
+WHO: rzli2
+WHAT: terminal does not update anything when the bottom of the screen is reached
+WHEN: 11/11/2018
+HOW: Forgot to scroll page at the end
+
+WHO: qw2
+WHAT: the output of "cat verylargetextwithverylongname.tx" is abnormal
+WHEN: 11/24/2018
+HOW: Reset the counter into 0 instead of reduce it by the data block size
+
+WHO: lliu79
+WHAT: program is executed under unexpected terminal
+WHEN: 11/26/2018
+HOW: store separate esp0 for each terminal
